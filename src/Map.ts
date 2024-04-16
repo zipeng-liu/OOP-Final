@@ -17,20 +17,24 @@ export class Map {
   public static async create(filePath: string): Promise<Map> {
     const data = await readFile(filePath, { encoding: 'utf8' });
     const objData = JSON.parse(data);
-
+    let ressultData = [];
     for (const city in objData) {
-      city.households.
+      // for each city, create household obj (with people obj stored in it) and the clinic obj
+      // push the IBlock obj into its block position as index in the ressultData array
+      // in this case I just define first 6 index as Burnaby the next 6 index as Vancouver, and so on
     }
 
-
-    return new Map();
+    return new Map(ressultData);
   }
 
   printMap(): Promise<void> {
+    let result = [];
     for (const block of this._mapData) {
-      if (typeof(block) === Household) {
-
-      }
+      // base on the this._map:
+      // if the block is household (without fall vacc) print H
+      // if full vacc print F
+      // if clinic print C
+      // if empty print X
     }
   };
 

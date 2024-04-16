@@ -12,4 +12,8 @@ export class Household implements IBlock{
     this.blockNumber = blockNumber;
     this.people = people;
   }
+
+  getVaccinationStatus(): boolean {
+    // return the overall vaccinationStatus for the household.
+  }:
 }
